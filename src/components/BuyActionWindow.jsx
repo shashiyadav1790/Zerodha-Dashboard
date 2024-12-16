@@ -1,4 +1,4 @@
-import React, {useState } from "react";
+import {useState } from "react";
 import { Link } from "react-router-dom";
 
 import axios from "axios";
@@ -12,7 +12,7 @@ const BuyActionWindow = ({ uid }) => {
   const [stockPrice, setStockPrice] = useState(0.0);
 
   const handleBuyClick = () => {
-    axios.post("http://localhost:8080/newOrder", {
+    axios.post("https://zerodhabackend-r6a5.onrender.com/newOrder", {
       name: uid,
       qty: stockQuantity,
       price: stockPrice,

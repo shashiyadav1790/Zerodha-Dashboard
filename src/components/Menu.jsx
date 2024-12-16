@@ -15,12 +15,17 @@ const Menu = () => {
     setIsProfileDropdownOpen(!isProfileDropdownOpen);
   };
 
+  const openLinkInNewTab = ( url ) => {
+    const newTab = window.open(url, '_blank', 'noopener,noreferrer');
+    if ( newTab ) newTab.opener = null;
+  }  
+
   const menuClass = "menu";
   const activeMenuClass = "menu selected";
 
   return (
     <div className="menu-container">
-      <img src="kite-logo.svg" style={{ width: "50px" }} />
+      <img src="kite-logo.svg" style={{ width: "50px" }} onClick={()=>{openLinkInNewTab("http://localhost:5173/")}}/>
       <div className="menus">
         <ul>
           <li>
